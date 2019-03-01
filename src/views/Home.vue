@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <div class="search_container noselect" v-if="false">
+    <div class="search_container noselect" v-if="true">
       <div class="search_info"> Name generates Reddit post titles using Markov chains! </div>
       <div class="search_info"> Select up to <strong>3 subreddits</strong> to by influenced by. </div>
 
@@ -144,10 +144,11 @@ export default {
   background-color: white;
   width: 528px;
   padding: 10px 0 10px 0;
-  border: solid 4px darken($primary, 10%);
-  color: darken($primary, 10%);
+  border: solid 4px darken($primary, 30%);
+  color: darken($primary, 30%);
   box-sizing: border-box;
   font-size: 0;
+  border-radius: 10px;
 }
 
 .search_selected_container {
@@ -158,9 +159,9 @@ export default {
   margin: 0 25px 0 0;
   padding: 2px 10px 2px 7px;
   position: relative;
-  background-color: $primary;
+  background-color: darken($primary, 20%);
   color: lighten($primary, 80%);
-  border: solid 2px darken($primary, 10%);
+  border: solid 2px darken($primary, 30%);
   box-sizing: border-box;
   border-radius: 5px 0 0 5px;
   font-size: 11px;
@@ -178,7 +179,7 @@ export default {
   vertical-align: top;
   width: 20px;
   height: 21px;
-  background-color: darken($primary, 10%);
+  background-color: darken($primary, 30%);
   position: absolute;
   top: -2px;
   right: -20px;
@@ -193,10 +194,6 @@ export default {
   }
 }
 
-.search_selected_id {
-  color: lighten($primary, 40%);
-}
-
 .search_selected_name {
   font-weight: bold;
   margin-left: 5px;
@@ -208,9 +205,9 @@ export default {
   padding: 5px 10px;
   font-weight: bold;
   font-size: 20px;
-  background-color: $primary;
+  background-color: darken($primary, 30%);
   color: lighten($primary, 80%);
-  border: solid 2px darken($primary, 10%);
+  border: solid 2px darken($primary, 30%);
   border-radius: 5px;
 
   &:hover {
@@ -224,7 +221,7 @@ export default {
   vertical-align: top;
   width: 95%;
   height: 2px;
-  background-color: lighten($primary, 45%);
+  background-color: lighten($primary, 20%);
   margin: 10px 0 10px 0;
 }
 
@@ -247,8 +244,8 @@ export default {
   vertical-align: top;
   width: 300px;
   font-size: 16px;
-  background-color: lighten($primary, 45%);
-  border: solid 2px darken($primary, 10%);
+  background-color: lighten($primary, 20%);
+  border: solid 2px darken($primary, 30%);
   border-radius: 5px;
   max-height: 400px;
   overflow-y: scroll;
@@ -258,9 +255,9 @@ export default {
 .search_subreddit {
   display: inline-block;
   vertical-align: top;
-  background-color: $primary;
+  background-color: darken($primary, 30%);
   color: lighten($primary, 80%);
-  border: solid 2px darken($primary, 10%);
+  border: solid 2px darken($primary, 30%);
   padding: 2px 5px 2px 5px;
   margin: 2px;
   width: 200px;

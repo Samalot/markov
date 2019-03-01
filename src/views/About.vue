@@ -41,11 +41,12 @@
   background-color: white;
   width: 528px;
   padding: 20px;
-  border: solid 4px darken($primary, 10%);
-  color: darken($primary, 10%);
+  border: solid 4px darken($primary, 30%);
+  color: darken($primary, 30%);
   box-sizing: border-box;
   font-size: 16px;
   text-align: left;
+  border-radius: 10px;
 }
 
 .divider {

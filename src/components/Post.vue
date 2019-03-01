@@ -39,12 +39,13 @@ export default {
   display: inline-block;
   vertical-align: top;
   background-color: white;
-  // width: 500px;
+  min-width: 540px;
   height: 70px;
   text-align: left;
   margin: 5px;
   padding: 4px 10px;
-  border: solid 4px darken($primary, 10%);
+  border: solid 4px darken($primary, 30%);
+  border-radius: 10px;
 }
 
 .score {
