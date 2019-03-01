@@ -12,7 +12,7 @@
     <div class="text">
       <div class="post_title"> {{ post.title }} </div>
       <div class="post_submit noselect"> {{ "submitted "+post.time+" hours ago by "+post.user }} <div class="gilded" v-if="post.gilded"></div> </div>
-      <div class="post_extra noselect" :style="{'margin-top': (post.gilded ? 2 : 4)+'px'}"> {{ post.comments+" comments " }} <span class="copy"> copy </span> </div>
+      <div class="post_extra noselect" :style="{'margin-top': (post.gilded ? 0 : 2)+'px'}"> {{ post.comments+" comments " }} <span class="copy"> copy </span> </div>
     </div>
 
 
@@ -39,12 +39,11 @@ export default {
   display: inline-block;
   vertical-align: top;
   background-color: white;
-  width: 500px;
-  height: 50px;
+  // width: 500px;
+  height: 70px;
   text-align: left;
   margin: 5px;
-  padding: 0;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border: solid 4px darken($primary, 10%);
 }
 
@@ -93,7 +92,7 @@ export default {
   font-weight: bold;
   font-size: small;
   color: #c6c6c6;
-  margin-top: 17px;
+  margin-top: 19px;
 }
 
 .thumbnail {
@@ -103,6 +102,7 @@ export default {
   background-image: url("../assets/sprite.png");
   background-repeat: no-repeat;
   height: 50px;
+  margin-top: 2px;
 }
 
 .text {
@@ -113,10 +113,8 @@ export default {
 }
 
 .post_title {
-  margin-top: 2px;
   color: #0000ff;
   font-size: medium;
-  margin-bottom: 1px;
 }
 
 .post_submit {
