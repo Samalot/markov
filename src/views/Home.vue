@@ -47,16 +47,9 @@
     </div>
 
 
-
-
-
-    <div><reddit-post :post="post"/></div>
-    <div><reddit-post :post="post"/></div>
-    <div><reddit-post :post="post"/></div>
-    <div><reddit-post :post="post"/></div>
-    <div><reddit-post :post="post"/></div>
-    <div><reddit-post :post="post"/></div>
-    <div><reddit-post :post="post"/></div>
+    <div v-for="(result, index) in results" :key="'result-'+index">
+      <reddit-post :post="result"/>
+    </div>
 
 
   </div>
@@ -65,6 +58,8 @@
 <script>
 import Post from '@/components/Post.vue'
 import Subreddits from '@/components/subreddits.json'
+let random = require('random-name'),
+    randomWords = require('random-words');
 
 
 export default {
@@ -78,17 +73,7 @@ export default {
     categories: [],
     selected_category: "All",
     selected_subreddits: [],
-
-    post: {
-      title: 'Help with the company machine learning a team lead at past title',
-      thumbnail: 2,
-      karma: -456,
-      time: 10,
-      comments: 9345,
-      user: 'Petealot',
-      gilded: true
-    }
-
+    results: []
   } },
 
   methods: {
@@ -108,6 +93,23 @@ export default {
       this.subreddits.forEach( s => {
         if ( this.selected_category === "All" || s[1].some( c => c === this.selected_category ) ) { this.filtered_subreddits.push(s[0]) }
       });
+    },
+
+    generate_username () {
+      let word = randomWords()
+      return random.first() + "_" + word.charAt(0).toUpperCase() + word.slice(1) + "_" + Math.floor(Math.random() * (1000 - 1) + 1);
+    },
+
+    assign_meta (post) {
+      return {
+        title: post,
+        thumbnail: Math.floor(Math.random() * (4)),
+        karma: Math.floor(Math.random() * (9000 - -9000) + -9000),
+        time: Math.floor(Math.random() * (20 - 1) + 1),
+        comments: Math.floor(Math.random() * (1000 - 1) + 1),
+        user: this.generate_username(),
+        gilded: Math.random() * (100) < 10
+      }
     }
 
   },
@@ -121,6 +123,11 @@ export default {
     this.categories = Array.from(categories_set);
     this.categories.sort();
     this.categories.unshift("All");
+
+    this.results.push(this.assign_meta("All user has more realistic than this major case will sjw!"));
+    this.results.push(this.assign_meta("All user has more realistic than this major case will sjw!"));
+    this.results.push(this.assign_meta("All user has more realistic than this major case will sjw!"));
+    this.results.push(this.assign_meta("All user has more realistic than this major case will sjw!"));
   }
 
 
